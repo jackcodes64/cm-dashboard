@@ -54,8 +54,6 @@ app.post('/api/permissions', async (req, res) => {
   }
 });
 
-    const { User } = require('./models'); 
-
 // Function to create admin and newuser
 const createUsers = async () => {
   // Check for existing users
