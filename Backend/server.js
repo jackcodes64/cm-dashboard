@@ -24,7 +24,7 @@ app.use(express.json());
 
 /* ---------- Routes ---------- */
 
-app.use('/api/posts', postRoutes);
+app.use('/api/posts', postRouktes);
 app.use('/api/users', userRoutes);
 app.use('/api/errors', errorRoutes);
 app.use('/api/test', testRoutes);
