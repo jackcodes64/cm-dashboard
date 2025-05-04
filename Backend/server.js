@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const app = express();
 const cors = require('cors');
 const { sequelize, User, Post, Newsletter, ErrorLog } = require('./models');
 const { Permit } = require('permitio');
@@ -11,7 +12,6 @@ const errorRoutes = require('./routes/errorRoutes');
 const testRoutes = require('./routes/testRoutes');
 const newsletterRoutes = require('./routes/newsletterRoutes'); 
 
-const app = express();
 const PORT = process.env.PORT || 5000;
 
 const allowedOrigins = [
