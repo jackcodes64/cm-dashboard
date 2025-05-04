@@ -7,7 +7,7 @@ const { Permit } = require('permitio');
 
 // Routes
 const postRoutes = require('./routes/postRoutes');
-const userRoutes = require('./routes/userRoutes');
+const userRoutes = require('./routes/');
 const errorRoutes = require('./routes/errorRoutes');
 const testRoutes = require('./routes/testRoutes');
 const newsletterRoutes = require('./routes/newsletterRoutes'); 
