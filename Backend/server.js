@@ -48,6 +48,41 @@ app.post('/api/permissions', async (req, res) => {
     } else {
       return res.status(403).json({ allowed: false, message: "Access denied" });
     }
+    const { User } = require('./models'); // Assuming 'User' is your model
+
+// Function to create admin and newuser
+const createUsers = async () => {
+  // Check for existing users
+  const adminUser = await User.findOne({ where: { username: 'admin' } });
+  const newUser = await User.findOne({ where: { username: 'newuser' } });
+
+  // Create admin user if it doesn't exist
+  if (!adminUser) {
+    await User.create({
+      username: 'admin',
+      password: '2025DEVchallenge', // Plain text password
+      role: 'admin', // Role for admin user
+    });
+    console.log('Admin user created!');
+  } else {
+    console.log('Admin user already exists.');
+  }
+
+  // Create newuser if it doesn't exist
+  if (!newUser) {
+    await User.create({
+      username: 'newuser',
+      password: '2025DEVchallenge', // Plain text password
+      role: 'user', // Role for regular user
+    });
+    console.log('New user created!');
+  } else {
+    console.log('New user already exists.');
+  }
+};
+
+// Call this function before the server starts
+createUsers();
 
   } catch (err) {
     console.error("Permit check failed:", err);
