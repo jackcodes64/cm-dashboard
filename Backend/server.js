@@ -53,12 +53,12 @@ app.post('/api/permissions', async (req, res) => {
 // Function to create admin and newuser
 const createUsers = async () => {
   // Check for existing users
-  const adminUser = await User.findOne({ where: { username: 'admin' } });
-  const newUser = await User.findOne({ where: { username: 'newuser' } });
+  const adminUser = await Users.findOne({ where: { username: 'admin' } });
+  const newUser = await Users.findOne({ where: { username: 'newuser' } });
 
   // Create admin user if it doesn't exist
   if (!adminUser) {
-    await User.create({
+    await Users.create({
       username: 'admin',
       password: '2025DEVchallenge', // Plain text password
       role: 'admin', // Role for admin user
@@ -70,7 +70,7 @@ const createUsers = async () => {
 
   // Create newuser if it doesn't exist
   if (!newUser) {
-    await User.create({
+    await Users.create({
       username: 'newuser',
       password: '2025DEVchallenge', // Plain text password
       role: 'user', // Role for regular user
