@@ -16,7 +16,7 @@ Authentication and Authorizations too have leveraged the API-first idea.
    
 
 2.USERS tab
-    View users who subscribed to newsletter
+    View users who subscribed to newsletter  
     Search for subscriber using email
     Download CSV for mailing services
     Delete subscribers --- require admin 
@@ -33,10 +33,16 @@ Authentication and Authorizations too have leveraged the API-first idea.
    
 
 #Authentication and authorization
+
+
 1.Authentication
+
+
 Simple login page for verification of expected users. Also doubles as the initializer of user.
 
 2. Permit.io Authorization
+
+ 
    I used 
    i) Dynamic UI control --- you dont have the authorization? this optioned is faded out and disabled
    ii) Fine-grained permission check---policies live outside the code
@@ -44,9 +50,11 @@ Simple login page for verification of expected users. Also doubles as the initia
    iv) Backend layer --- protection to suppliment the front end.
 
 HOW PERMIT.IO WORKS
-1. 
 
-  BACKEND
+
+1. BACKEND
+
+   
   Installation of Permit.io in Node.js environment --- npm install permitio
   Easy, hit you npm install and use their cloud hosted dashboard.
   Import Permit module from permitio-- import {Permit} from "permitio"
@@ -54,12 +62,17 @@ HOW PERMIT.IO WORKS
   Create a permit function from the top-level function.
   Create a checkpoint route called from frontend to check permissions using api-key and Permit.io cloud URL.
 
-  FRONTEND
+
+3. FRONTEND
+
+
   I used a jsx module technique where, i created module PermissionGate in a file, used it to wrap options in my dashboard 
   requiring authorization from backend. Retrieves variables needed to check authorization from the modules it was imported i.e:
   userId, resource, and action --- all necessary for the permit.io role based authorization.
 
   PERMISSION MODEL
+
+  
   The roles are: newuser(109) and admin(1009)
   Resources: post(post view and manipulations), sendEmail(Subscribers), debugPage(BUGS tab)
 
@@ -72,11 +85,16 @@ HOW PERMIT.IO WORKS
       1.post --- all CRUD operations
       2.sendEmail --- operations -read but no delete
       3.debugPage --- no access
+
+      
   SECURITY
+
+  
   As much as i use the API-first authorization and verification, on a pull , use https and sanitize your inputs for more security.
 
-  Conclusion
-  This project demonstrates how to design with authorization first, using external policy logic to scale cleanly and securely.   I didn’t scatter access rules inside route handlers — I pull them out, make them reusable, and centralized them via Permit.io.
+  CONCLUSION
+  
+This project demonstrates how to design with authorization first, using external policy logic to scale cleanly and securely.  I didn’t scatter access rules inside route handlers — I pull them out, make them reusable, and centralized them via Permit.io.
 If you're building APIs meant to scale or be maintained by others, this is the way. And also, if you want only headache to be your core functionalities API-first approaches like Permit.io is the way.
 
   CONTRIBUTIONS
