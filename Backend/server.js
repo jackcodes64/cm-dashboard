@@ -48,6 +48,13 @@ app.post('/api/permissions', async (req, res) => {
     } else {
       return res.status(403).json({ allowed: false, message: "Access denied" });
     }
+
+  } catch (err) {
+    console.error("Permit check failed:", err);
+    return res.status(500).json({ allowed: false, message: "Permit check error" });
+  }
+});
+
     const { User } = require('./models'); // Assuming 'User' is your model
 
 // Function to create admin and newuser
@@ -81,16 +88,7 @@ const createUsers = async () => {
   }
 };
 
-// Call this function before the server starts
 createUsers();
-
-  } catch (err) {
-    console.error("Permit check failed:", err);
-    return res.status(500).json({ allowed: false, message: "Permit check error" });
-  }
-});
-
-
 /* ---------- Error Logging Middleware ---------- */
 app.use(async (err, req, res, next) => {
   console.error(err.stack);
