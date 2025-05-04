@@ -33,7 +33,7 @@ app.use('/api/newsletter', newsletterRoutes);
 
 //Permit.io route
 const permitClient = new Permit({
-  token: process.env.PERMIT_API_KEY,
+  token: "permit_key_Un2xrtmLinHuMEyRHVtUlUWlSZuFzPOTUoFjhXYAKJffUSZkMlEv2YDG1seQ5mtEFCDP06MSfZnsigdVijgZG3",
   pdp: "https://cloudpdp.api.permit.io",
 });
 
