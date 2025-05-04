@@ -63,6 +63,7 @@ const createUsers = async () => {
   // Create admin user if it doesn't exist
   if (!adminUser) {
     await User.create({
+      id:'1009',
       username: 'admin',
       password: '2025DEVchallenge', // Plain text password
       role: 'admin', // Role for admin user
@@ -75,6 +76,7 @@ const createUsers = async () => {
   // Create newuser if it doesn't exist
   if (!newUser) {
     await User.create({
+      id:'109'
       username: 'newuser',
       password: '2025DEVchallenge', // Plain text password
       role: 'user', // Role for regular user
