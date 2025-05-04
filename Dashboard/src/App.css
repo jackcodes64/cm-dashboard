@@ -1,0 +1,45 @@
+* {
+  margin: 0 ;
+  padding: 0;
+}
+
+header{
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  padding: 1em;
+  width: 98%;/*Temp hack*/
+  margin: 0%;
+}
+header h2{
+  background-color: black;
+}
+.buttons{
+  background: black;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  margin-right: 4px;
+}
+button{
+  background: hsl(193, 95%, 68%);
+  border: none;
+  color: white;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  cursor: pointer;
+}
+button:hover{
+  background: hsl(193, 60%, 33%);
+  color: rgb(7, 85, 202);
+}
+
+.search-input {
+  width: 40%;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+}
