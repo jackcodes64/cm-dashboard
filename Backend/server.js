@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5000;
 
 const allowedOrigins = [
   'http://localhost:5173',        
-  'cm-dashboard-xbo3.vercel.app',      
+  'https://cm-dashboard-xbo3.vercel.app'',      
 ];
 
 app.use(cors({
