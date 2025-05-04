@@ -55,17 +55,17 @@ app.post('/api/permissions', async (req, res) => {
   }
 });
 
-    const { User } = require('./models'); // Assuming 'User' is your model
+    const { User } = require('./models'); 
 
 // Function to create admin and newuser
 const createUsers = async () => {
   // Check for existing users
-  const adminUser = await Users.findOne({ where: { username: 'admin' } });
-  const newUser = await Users.findOne({ where: { username: 'newuser' } });
+  const adminUser = await User.findOne({ where: { username: 'admin' } });
+  const newUser = await User.findOne({ where: { username: 'newuser' } });
 
   // Create admin user if it doesn't exist
   if (!adminUser) {
-    await Users.create({
+    await User.create({
       username: 'admin',
       password: '2025DEVchallenge', // Plain text password
       role: 'admin', // Role for admin user
@@ -77,7 +77,7 @@ const createUsers = async () => {
 
   // Create newuser if it doesn't exist
   if (!newUser) {
-    await Users.create({
+    await User.create({
       username: 'newuser',
       password: '2025DEVchallenge', // Plain text password
       role: 'user', // Role for regular user
