@@ -1,8 +1,9 @@
 CONTENT MANAGEMENT DASHBOARD SECURED BY PERMIT.IO API-FIRST SOFTWARE AS A SERVICE
 
 #Dashboard Functionality
-My applications aims to benefit from the current trend of API-first approaches, all the main operations and suboperations are carried out in remote severs and workspaces.  The core functionalities, POST USERS and BUGS are all served through API. 
+My applications aims to benefit from the current trend of API-first approaches, all the main operations and suboperations are carried out in remote severs and workspaces.  The core functionalities, POST, USERS and BUGS are all served through API. 
 Authentication and Authorizations too have leveraged the API-first idea.
+
 
 1. POST tab
    The post tab support view of the posts.
@@ -12,6 +13,7 @@ Authentication and Authorizations too have leveraged the API-first idea.
                             : Delete post
                             : Update post attributes
    All operations originate from a backend server.
+   
 
 2.USERS tab
     View users who subscribed to newsletter
@@ -19,13 +21,16 @@ Authentication and Authorizations too have leveraged the API-first idea.
     Download CSV for mailing services
     Delete subscribers --- require admin 
     
+    
 3. BUGS tab
     Detailed server error logs on the dashboard
     Error attributes are -- error code, trigger, stack trace and time of occurance
     A "Mark as Resolved" button.
    
+   
    NOTE: BUGS tab is only accessile to the admin only.
          All these operations are initiated in the frontend and effected from the backend APIs.
+   
 
 #Authentication and authorization
 1.Authentication
