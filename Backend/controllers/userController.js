@@ -11,6 +11,7 @@ exports.getAllUsers = async (req, res) => {
 
 exports.loginUser = async (req, res) => {
   try {
+    console.log("We're in use login")
     const { username, password } = req.body;
 
     const user = await User.findOne({ where: { username } });
